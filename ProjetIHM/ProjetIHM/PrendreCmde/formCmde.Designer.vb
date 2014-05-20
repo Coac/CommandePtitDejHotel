@@ -391,7 +391,7 @@ Partial Class formCmde
         Me.lblIndiceCmde.Name = "lblIndiceCmde"
         Me.lblIndiceCmde.Size = New System.Drawing.Size(13, 13)
         Me.lblIndiceCmde.TabIndex = 22
-        Me.lblIndiceCmde.Text = "1"
+        Me.lblIndiceCmde.Text = "0"
         '
         'Label1
         '

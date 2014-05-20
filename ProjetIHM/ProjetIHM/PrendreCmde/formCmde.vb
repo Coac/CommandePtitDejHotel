@@ -3,12 +3,9 @@
     Dim nbViennois As Integer = 0
 
     Public Sub retourMenuPrincip(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnMenu.Click
-        ActiveForm.Hide()
+        Me.Hide()
         frmMenu.Show()
-    End Sub
 
-    Private Sub formCmde_Activated(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Activated
-        lblIndiceCmde.Text = commandes.cmdeCourante.nbCmde.ToString
     End Sub
 
 
@@ -86,30 +83,24 @@
     Private Sub btnSuivant_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSuivant.Click
 
         'Boisson Froide
-        commandes.cmdeCourante.cmdes(lblIndiceCmde.Text).boissonFroide = cbBoissonFroide.SelectedItem
+        commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text)).boissonFroide = cbBoissonFroide.SelectedItem
 
 
         'Viennoiseries
         Dim Cb As CheckBox
-        Dim i As Integer = 0
         For Each Cb In gbViennnoiseries.Controls
             If (Cb.Checked) Then
-                commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text)).viennoiseries(commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text)).nbViennoi) = Cb.Text
-                commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text)).nbViennoi = commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text)).nbViennoi + 1
+                commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text)).viennoiseries.Add(New String(Cb.Text))
             End If
-            i = i + 1
         Next
 
 
         'Accommodements
-        If commandes.cmdeCourante.cmdes(lblIndiceCmde.Text).nbViennoi > 0 Then
-            i = 0
+        If commandes.cmdeCourante.cmdes(lblIndiceCmde.Text).viennoiseries.Count > 0 Then
             For Each Cb In gbAccommodements.Controls
                 If (Cb.Checked) Then
-                    commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text)).accodements(commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text)).nbAccodements) = Cb.Text
-                    commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text)).nbAccodements = commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text)).nbAccodements + 1
+                    commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text)).accodements.Add(New String(Cb.Text))
                 End If
-                i = i + 1
             Next
         End If
 
@@ -117,4 +108,6 @@
         formCmdeRecap.Show()
 
     End Sub
+
+
 End Class

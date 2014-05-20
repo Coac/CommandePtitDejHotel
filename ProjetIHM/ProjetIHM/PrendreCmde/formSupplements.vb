@@ -44,8 +44,7 @@
         Dim i As Integer = 0
         For Each Cb In pnlNoms.Controls
             If (Cb.Checked) Then
-                commandes.cmdeCourante.cmdes(Val(formCmde.lblIndiceCmde.Text)).supplements(commandes.cmdeCourante.cmdes(Val(formCmde.lblIndiceCmde.Text)).nbSupplements) = Cb.Text
-                commandes.cmdeCourante.cmdes(Val(formCmde.lblIndiceCmde.Text)).nbSupplements = commandes.cmdeCourante.cmdes(Val(formCmde.lblIndiceCmde.Text)).nbSupplements + 1
+                commandes.cmdeCourante.cmdes(Val(formCmde.lblIndiceCmde.Text)).supplements.Add(New String(Cb.Text))
             End If
             i = i + 1
         Next

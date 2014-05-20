@@ -1,7 +1,8 @@
 ﻿Public Class formNumCh
 
     Private Sub btnMenu_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnMenu.Click
-        Call formCmde.retourMenuPrincip(sender, e)
+        Me.Hide()
+        frmMenu.Show()
 
     End Sub
 
@@ -31,7 +32,8 @@
         formPreCmde.lblNumCh.Text = txtboxNumCh.Text
 
 
-        commandes.cmdeCourante.numCh = txtboxNumCh.Text
+        'Numero de Chambre
+        commandes.cmdeCourante.numCh = Val(txtboxNumCh.Text)
 
 
         Me.Hide()

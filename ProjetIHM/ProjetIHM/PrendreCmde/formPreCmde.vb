@@ -15,7 +15,8 @@
     End Sub
 
     Private Sub btnMenu_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnMenu.Click
-        formCmde.retourMenuPrincip(sender, e)
+        Me.Hide()
+        frmMenu.Show()
     End Sub
 
     Private Sub formPreCmde_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -49,14 +50,13 @@
             Exit Sub
         End If
 
-        'formCmde.lblNom.Text = "Nom : " & txtNom.Text & " " & txtPrenom.Text
+        formCmde.lblNom.Text = "Nom : " & txtNom.Text & " " & txtPrenom.Text
 
 
 
 
         commandes.cmdeCourante.nom = txtNom.Text
         commandes.cmdeCourante.prenom = txtPrenom.Text
-        commandes.cmdeCourante.nbCmde = cbNbPtitDej.SelectedValue
 
         Me.Hide()
         formCmde.Show()
