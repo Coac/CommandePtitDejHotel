@@ -23,16 +23,6 @@ Partial Class formCmde
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.btnMenu = New System.Windows.Forms.Button()
-        Me.lblNom = New System.Windows.Forms.Label()
-        Me.lblPrenom = New System.Windows.Forms.Label()
-        Me.txtNom = New System.Windows.Forms.TextBox()
-        Me.txtPrenom = New System.Windows.Forms.TextBox()
-        Me.cbNbPtitDej = New System.Windows.Forms.ComboBox()
-        Me.lblNbDej = New System.Windows.Forms.Label()
-        Me.pnlService = New System.Windows.Forms.Panel()
-        Me.lblService = New System.Windows.Forms.Label()
-        Me.rdbChambre = New System.Windows.Forms.RadioButton()
-        Me.rdbSalle = New System.Windows.Forms.RadioButton()
         Me.gbBoissonChaude = New System.Windows.Forms.GroupBox()
         Me.RadioButton7 = New System.Windows.Forms.RadioButton()
         Me.RadioButton6 = New System.Windows.Forms.RadioButton()
@@ -58,23 +48,18 @@ Partial Class formCmde
         Me.CheckBox9 = New System.Windows.Forms.CheckBox()
         Me.gbBoissonFroide = New System.Windows.Forms.GroupBox()
         Me.cbBoissonFroide = New System.Windows.Forms.ComboBox()
-        Me.gbSupplements = New System.Windows.Forms.GroupBox()
-        Me.CheckBox14 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox15 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox16 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox17 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox18 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox19 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox20 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox21 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox22 = New System.Windows.Forms.CheckBox()
-        Me.CheckBox23 = New System.Windows.Forms.CheckBox()
-        Me.pnlService.SuspendLayout()
+        Me.lblNom = New System.Windows.Forms.Label()
+        Me.btnSupplements = New System.Windows.Forms.Button()
+        Me.btnSuivant = New System.Windows.Forms.Button()
+        Me.btnRetour = New System.Windows.Forms.Button()
+        Me.Label = New System.Windows.Forms.Label()
+        Me.lblIndiceCmde = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lbNbCmde = New System.Windows.Forms.Label()
         Me.gbBoissonChaude.SuspendLayout()
         Me.gbViennnoiseries.SuspendLayout()
         Me.gbAccommodements.SuspendLayout()
         Me.gbBoissonFroide.SuspendLayout()
-        Me.gbSupplements.SuspendLayout()
         Me.SuspendLayout()
         '
         'btnMenu
@@ -86,100 +71,6 @@ Partial Class formCmde
         Me.btnMenu.Text = "Menu Principal"
         Me.btnMenu.UseVisualStyleBackColor = True
         '
-        'lblNom
-        '
-        Me.lblNom.AutoSize = True
-        Me.lblNom.Location = New System.Drawing.Point(96, 101)
-        Me.lblNom.Name = "lblNom"
-        Me.lblNom.Size = New System.Drawing.Size(29, 13)
-        Me.lblNom.TabIndex = 5
-        Me.lblNom.Text = "Nom"
-        '
-        'lblPrenom
-        '
-        Me.lblPrenom.AutoSize = True
-        Me.lblPrenom.Location = New System.Drawing.Point(96, 131)
-        Me.lblPrenom.Name = "lblPrenom"
-        Me.lblPrenom.Size = New System.Drawing.Size(43, 13)
-        Me.lblPrenom.TabIndex = 6
-        Me.lblPrenom.Text = "Prénom"
-        '
-        'txtNom
-        '
-        Me.txtNom.Location = New System.Drawing.Point(146, 101)
-        Me.txtNom.MaxLength = 20
-        Me.txtNom.Name = "txtNom"
-        Me.txtNom.Size = New System.Drawing.Size(159, 20)
-        Me.txtNom.TabIndex = 7
-        '
-        'txtPrenom
-        '
-        Me.txtPrenom.Location = New System.Drawing.Point(146, 131)
-        Me.txtPrenom.MaxLength = 15
-        Me.txtPrenom.Name = "txtPrenom"
-        Me.txtPrenom.Size = New System.Drawing.Size(159, 20)
-        Me.txtPrenom.TabIndex = 8
-        '
-        'cbNbPtitDej
-        '
-        Me.cbNbPtitDej.FormattingEnabled = True
-        Me.cbNbPtitDej.Items.AddRange(New Object() {"1", "2", "2", "4"})
-        Me.cbNbPtitDej.Location = New System.Drawing.Point(464, 98)
-        Me.cbNbPtitDej.Name = "cbNbPtitDej"
-        Me.cbNbPtitDej.Size = New System.Drawing.Size(35, 21)
-        Me.cbNbPtitDej.TabIndex = 9
-        '
-        'lblNbDej
-        '
-        Me.lblNbDej.AutoSize = True
-        Me.lblNbDej.Location = New System.Drawing.Point(332, 101)
-        Me.lblNbDej.Name = "lblNbDej"
-        Me.lblNbDej.Size = New System.Drawing.Size(126, 13)
-        Me.lblNbDej.TabIndex = 10
-        Me.lblNbDej.Text = "Nombre de petit déjeuner"
-        '
-        'pnlService
-        '
-        Me.pnlService.Controls.Add(Me.lblService)
-        Me.pnlService.Controls.Add(Me.rdbChambre)
-        Me.pnlService.Controls.Add(Me.rdbSalle)
-        Me.pnlService.Location = New System.Drawing.Point(576, 98)
-        Me.pnlService.Name = "pnlService"
-        Me.pnlService.Size = New System.Drawing.Size(184, 96)
-        Me.pnlService.TabIndex = 11
-        '
-        'lblService
-        '
-        Me.lblService.AutoSize = True
-        Me.lblService.Location = New System.Drawing.Point(15, 10)
-        Me.lblService.Name = "lblService"
-        Me.lblService.Size = New System.Drawing.Size(43, 13)
-        Me.lblService.TabIndex = 2
-        Me.lblService.Text = "Service"
-        '
-        'rdbChambre
-        '
-        Me.rdbChambre.AutoSize = True
-        Me.rdbChambre.Checked = True
-        Me.rdbChambre.Location = New System.Drawing.Point(28, 37)
-        Me.rdbChambre.Name = "rdbChambre"
-        Me.rdbChambre.Size = New System.Drawing.Size(105, 17)
-        Me.rdbChambre.TabIndex = 1
-        Me.rdbChambre.TabStop = True
-        Me.rdbChambre.Text = "Dans la chambre"
-        Me.rdbChambre.UseVisualStyleBackColor = True
-        '
-        'rdbSalle
-        '
-        Me.rdbSalle.AutoSize = True
-        Me.rdbSalle.Location = New System.Drawing.Point(28, 59)
-        Me.rdbSalle.Name = "rdbSalle"
-        Me.rdbSalle.Size = New System.Drawing.Size(64, 17)
-        Me.rdbSalle.TabIndex = 0
-        Me.rdbSalle.TabStop = True
-        Me.rdbSalle.Text = "En Salle"
-        Me.rdbSalle.UseVisualStyleBackColor = True
-        '
         'gbBoissonChaude
         '
         Me.gbBoissonChaude.Controls.Add(Me.RadioButton7)
@@ -189,7 +80,7 @@ Partial Class formCmde
         Me.gbBoissonChaude.Controls.Add(Me.RadioButton3)
         Me.gbBoissonChaude.Controls.Add(Me.RadioButton2)
         Me.gbBoissonChaude.Controls.Add(Me.RadioButton1)
-        Me.gbBoissonChaude.Location = New System.Drawing.Point(99, 255)
+        Me.gbBoissonChaude.Location = New System.Drawing.Point(110, 67)
         Me.gbBoissonChaude.Name = "gbBoissonChaude"
         Me.gbBoissonChaude.Size = New System.Drawing.Size(168, 284)
         Me.gbBoissonChaude.TabIndex = 12
@@ -278,9 +169,9 @@ Partial Class formCmde
         Me.gbViennnoiseries.Controls.Add(Me.CheckBox3)
         Me.gbViennnoiseries.Controls.Add(Me.CheckBox2)
         Me.gbViennnoiseries.Controls.Add(Me.CheckBox1)
-        Me.gbViennnoiseries.Location = New System.Drawing.Point(360, 255)
+        Me.gbViennnoiseries.Location = New System.Drawing.Point(340, 67)
         Me.gbViennnoiseries.Name = "gbViennnoiseries"
-        Me.gbViennnoiseries.Size = New System.Drawing.Size(308, 173)
+        Me.gbViennnoiseries.Size = New System.Drawing.Size(343, 185)
         Me.gbViennnoiseries.TabIndex = 13
         Me.gbViennnoiseries.TabStop = False
         Me.gbViennnoiseries.Text = "Viennoiseries"
@@ -372,9 +263,9 @@ Partial Class formCmde
         Me.gbAccommodements.Controls.Add(Me.CheckBox11)
         Me.gbAccommodements.Controls.Add(Me.CheckBox10)
         Me.gbAccommodements.Controls.Add(Me.CheckBox9)
-        Me.gbAccommodements.Location = New System.Drawing.Point(718, 255)
+        Me.gbAccommodements.Location = New System.Drawing.Point(737, 67)
         Me.gbAccommodements.Name = "gbAccommodements"
-        Me.gbAccommodements.Size = New System.Drawing.Size(156, 219)
+        Me.gbAccommodements.Size = New System.Drawing.Size(129, 219)
         Me.gbAccommodements.TabIndex = 14
         Me.gbAccommodements.TabStop = False
         Me.gbAccommodements.Tag = "c"
@@ -433,7 +324,7 @@ Partial Class formCmde
         'gbBoissonFroide
         '
         Me.gbBoissonFroide.Controls.Add(Me.cbBoissonFroide)
-        Me.gbBoissonFroide.Location = New System.Drawing.Point(431, 466)
+        Me.gbBoissonFroide.Location = New System.Drawing.Point(340, 280)
         Me.gbBoissonFroide.Name = "gbBoissonFroide"
         Me.gbBoissonFroide.Size = New System.Drawing.Size(203, 61)
         Me.gbBoissonFroide.TabIndex = 15
@@ -448,148 +339,99 @@ Partial Class formCmde
         Me.cbBoissonFroide.Size = New System.Drawing.Size(121, 21)
         Me.cbBoissonFroide.TabIndex = 0
         '
-        'gbSupplements
+        'lblNom
         '
-        Me.gbSupplements.Controls.Add(Me.CheckBox23)
-        Me.gbSupplements.Controls.Add(Me.CheckBox22)
-        Me.gbSupplements.Controls.Add(Me.CheckBox21)
-        Me.gbSupplements.Controls.Add(Me.CheckBox20)
-        Me.gbSupplements.Controls.Add(Me.CheckBox19)
-        Me.gbSupplements.Controls.Add(Me.CheckBox18)
-        Me.gbSupplements.Controls.Add(Me.CheckBox17)
-        Me.gbSupplements.Controls.Add(Me.CheckBox16)
-        Me.gbSupplements.Controls.Add(Me.CheckBox15)
-        Me.gbSupplements.Controls.Add(Me.CheckBox14)
-        Me.gbSupplements.Location = New System.Drawing.Point(99, 578)
-        Me.gbSupplements.Name = "gbSupplements"
-        Me.gbSupplements.Size = New System.Drawing.Size(775, 107)
-        Me.gbSupplements.TabIndex = 16
-        Me.gbSupplements.TabStop = False
-        Me.gbSupplements.Text = "Suppléments"
+        Me.lblNom.AutoSize = True
+        Me.lblNom.Location = New System.Drawing.Point(307, 24)
+        Me.lblNom.Name = "lblNom"
+        Me.lblNom.Size = New System.Drawing.Size(39, 13)
+        Me.lblNom.TabIndex = 17
+        Me.lblNom.Text = "lblNom"
         '
-        'CheckBox14
+        'btnSupplements
         '
-        Me.CheckBox14.AutoSize = True
-        Me.CheckBox14.Location = New System.Drawing.Point(27, 31)
-        Me.CheckBox14.Name = "CheckBox14"
-        Me.CheckBox14.Size = New System.Drawing.Size(87, 17)
-        Me.CheckBox14.TabIndex = 0
-        Me.CheckBox14.Text = "CheckBox14"
-        Me.CheckBox14.UseVisualStyleBackColor = True
+        Me.btnSupplements.Location = New System.Drawing.Point(585, 295)
+        Me.btnSupplements.Name = "btnSupplements"
+        Me.btnSupplements.Size = New System.Drawing.Size(98, 37)
+        Me.btnSupplements.TabIndex = 18
+        Me.btnSupplements.Text = "Suppléments"
+        Me.btnSupplements.UseVisualStyleBackColor = True
         '
-        'CheckBox15
+        'btnSuivant
         '
-        Me.CheckBox15.AutoSize = True
-        Me.CheckBox15.Location = New System.Drawing.Point(180, 31)
-        Me.CheckBox15.Name = "CheckBox15"
-        Me.CheckBox15.Size = New System.Drawing.Size(87, 17)
-        Me.CheckBox15.TabIndex = 1
-        Me.CheckBox15.Text = "CheckBox15"
-        Me.CheckBox15.UseVisualStyleBackColor = True
+        Me.btnSuivant.Location = New System.Drawing.Point(595, 397)
+        Me.btnSuivant.Name = "btnSuivant"
+        Me.btnSuivant.Size = New System.Drawing.Size(108, 39)
+        Me.btnSuivant.TabIndex = 19
+        Me.btnSuivant.Text = "Suivant"
+        Me.btnSuivant.UseVisualStyleBackColor = True
         '
-        'CheckBox16
+        'btnRetour
         '
-        Me.CheckBox16.AutoSize = True
-        Me.CheckBox16.Location = New System.Drawing.Point(333, 31)
-        Me.CheckBox16.Name = "CheckBox16"
-        Me.CheckBox16.Size = New System.Drawing.Size(87, 17)
-        Me.CheckBox16.TabIndex = 2
-        Me.CheckBox16.Text = "CheckBox16"
-        Me.CheckBox16.UseVisualStyleBackColor = True
+        Me.btnRetour.Location = New System.Drawing.Point(435, 397)
+        Me.btnRetour.Name = "btnRetour"
+        Me.btnRetour.Size = New System.Drawing.Size(108, 39)
+        Me.btnRetour.TabIndex = 20
+        Me.btnRetour.Text = "Retour"
+        Me.btnRetour.UseVisualStyleBackColor = True
         '
-        'CheckBox17
+        'Label
         '
-        Me.CheckBox17.AutoSize = True
-        Me.CheckBox17.Location = New System.Drawing.Point(486, 31)
-        Me.CheckBox17.Name = "CheckBox17"
-        Me.CheckBox17.Size = New System.Drawing.Size(87, 17)
-        Me.CheckBox17.TabIndex = 3
-        Me.CheckBox17.Text = "CheckBox17"
-        Me.CheckBox17.UseVisualStyleBackColor = True
+        Me.Label.AutoSize = True
+        Me.Label.Location = New System.Drawing.Point(64, 410)
+        Me.Label.Name = "Label"
+        Me.Label.Size = New System.Drawing.Size(60, 13)
+        Me.Label.TabIndex = 21
+        Me.Label.Text = "Commande"
         '
-        'CheckBox18
+        'lblIndiceCmde
         '
-        Me.CheckBox18.AutoSize = True
-        Me.CheckBox18.Location = New System.Drawing.Point(639, 31)
-        Me.CheckBox18.Name = "CheckBox18"
-        Me.CheckBox18.Size = New System.Drawing.Size(87, 17)
-        Me.CheckBox18.TabIndex = 4
-        Me.CheckBox18.Text = "CheckBox18"
-        Me.CheckBox18.UseVisualStyleBackColor = True
+        Me.lblIndiceCmde.AutoSize = True
+        Me.lblIndiceCmde.Location = New System.Drawing.Point(145, 410)
+        Me.lblIndiceCmde.Name = "lblIndiceCmde"
+        Me.lblIndiceCmde.Size = New System.Drawing.Size(13, 13)
+        Me.lblIndiceCmde.TabIndex = 22
+        Me.lblIndiceCmde.Text = "1"
         '
-        'CheckBox19
+        'Label1
         '
-        Me.CheckBox19.AutoSize = True
-        Me.CheckBox19.Location = New System.Drawing.Point(27, 68)
-        Me.CheckBox19.Name = "CheckBox19"
-        Me.CheckBox19.Size = New System.Drawing.Size(87, 17)
-        Me.CheckBox19.TabIndex = 5
-        Me.CheckBox19.Text = "CheckBox19"
-        Me.CheckBox19.UseVisualStyleBackColor = True
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(165, 410)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(12, 13)
+        Me.Label1.TabIndex = 23
+        Me.Label1.Text = "/"
         '
-        'CheckBox20
+        'lbNbCmde
         '
-        Me.CheckBox20.AutoSize = True
-        Me.CheckBox20.Location = New System.Drawing.Point(180, 68)
-        Me.CheckBox20.Name = "CheckBox20"
-        Me.CheckBox20.Size = New System.Drawing.Size(87, 17)
-        Me.CheckBox20.TabIndex = 6
-        Me.CheckBox20.Text = "CheckBox20"
-        Me.CheckBox20.UseVisualStyleBackColor = True
-        '
-        'CheckBox21
-        '
-        Me.CheckBox21.AutoSize = True
-        Me.CheckBox21.Location = New System.Drawing.Point(332, 68)
-        Me.CheckBox21.Name = "CheckBox21"
-        Me.CheckBox21.Size = New System.Drawing.Size(87, 17)
-        Me.CheckBox21.TabIndex = 7
-        Me.CheckBox21.Text = "CheckBox21"
-        Me.CheckBox21.UseVisualStyleBackColor = True
-        '
-        'CheckBox22
-        '
-        Me.CheckBox22.AutoSize = True
-        Me.CheckBox22.Location = New System.Drawing.Point(486, 68)
-        Me.CheckBox22.Name = "CheckBox22"
-        Me.CheckBox22.Size = New System.Drawing.Size(87, 17)
-        Me.CheckBox22.TabIndex = 8
-        Me.CheckBox22.Text = "CheckBox22"
-        Me.CheckBox22.UseVisualStyleBackColor = True
-        '
-        'CheckBox23
-        '
-        Me.CheckBox23.AutoSize = True
-        Me.CheckBox23.Location = New System.Drawing.Point(639, 68)
-        Me.CheckBox23.Name = "CheckBox23"
-        Me.CheckBox23.Size = New System.Drawing.Size(87, 17)
-        Me.CheckBox23.TabIndex = 9
-        Me.CheckBox23.Text = "CheckBox23"
-        Me.CheckBox23.UseVisualStyleBackColor = True
+        Me.lbNbCmde.AutoSize = True
+        Me.lbNbCmde.Location = New System.Drawing.Point(184, 410)
+        Me.lbNbCmde.Name = "lbNbCmde"
+        Me.lbNbCmde.Size = New System.Drawing.Size(13, 13)
+        Me.lbNbCmde.TabIndex = 24
+        Me.lbNbCmde.Text = "1"
         '
         'formCmde
         '
         Me.AccessibleDescription = "sc"
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(993, 711)
-        Me.Controls.Add(Me.gbSupplements)
+        Me.ClientSize = New System.Drawing.Size(976, 514)
+        Me.Controls.Add(Me.lbNbCmde)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.lblIndiceCmde)
+        Me.Controls.Add(Me.Label)
+        Me.Controls.Add(Me.btnRetour)
+        Me.Controls.Add(Me.btnSuivant)
+        Me.Controls.Add(Me.btnSupplements)
+        Me.Controls.Add(Me.lblNom)
         Me.Controls.Add(Me.gbBoissonFroide)
         Me.Controls.Add(Me.gbAccommodements)
         Me.Controls.Add(Me.gbViennnoiseries)
         Me.Controls.Add(Me.gbBoissonChaude)
-        Me.Controls.Add(Me.pnlService)
-        Me.Controls.Add(Me.lblNbDej)
-        Me.Controls.Add(Me.cbNbPtitDej)
-        Me.Controls.Add(Me.txtPrenom)
-        Me.Controls.Add(Me.txtNom)
-        Me.Controls.Add(Me.lblPrenom)
-        Me.Controls.Add(Me.lblNom)
         Me.Controls.Add(Me.btnMenu)
         Me.Name = "formCmde"
         Me.Text = "Commande de Petit Déjeuner"
-        Me.pnlService.ResumeLayout(False)
-        Me.pnlService.PerformLayout()
         Me.gbBoissonChaude.ResumeLayout(False)
         Me.gbBoissonChaude.PerformLayout()
         Me.gbViennnoiseries.ResumeLayout(False)
@@ -597,23 +439,11 @@ Partial Class formCmde
         Me.gbAccommodements.ResumeLayout(False)
         Me.gbAccommodements.PerformLayout()
         Me.gbBoissonFroide.ResumeLayout(False)
-        Me.gbSupplements.ResumeLayout(False)
-        Me.gbSupplements.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents btnMenu As System.Windows.Forms.Button
-    Friend WithEvents lblNom As System.Windows.Forms.Label
-    Friend WithEvents lblPrenom As System.Windows.Forms.Label
-    Friend WithEvents txtNom As System.Windows.Forms.TextBox
-    Friend WithEvents txtPrenom As System.Windows.Forms.TextBox
-    Friend WithEvents cbNbPtitDej As System.Windows.Forms.ComboBox
-    Friend WithEvents lblNbDej As System.Windows.Forms.Label
-    Friend WithEvents pnlService As System.Windows.Forms.Panel
-    Friend WithEvents lblService As System.Windows.Forms.Label
-    Friend WithEvents rdbChambre As System.Windows.Forms.RadioButton
-    Friend WithEvents rdbSalle As System.Windows.Forms.RadioButton
     Friend WithEvents gbBoissonChaude As System.Windows.Forms.GroupBox
     Friend WithEvents RadioButton7 As System.Windows.Forms.RadioButton
     Friend WithEvents RadioButton6 As System.Windows.Forms.RadioButton
@@ -639,15 +469,12 @@ Partial Class formCmde
     Friend WithEvents CheckBox9 As System.Windows.Forms.CheckBox
     Friend WithEvents gbBoissonFroide As System.Windows.Forms.GroupBox
     Friend WithEvents cbBoissonFroide As System.Windows.Forms.ComboBox
-    Friend WithEvents gbSupplements As System.Windows.Forms.GroupBox
-    Friend WithEvents CheckBox23 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox22 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox21 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox20 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox19 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox18 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox17 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox16 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox15 As System.Windows.Forms.CheckBox
-    Friend WithEvents CheckBox14 As System.Windows.Forms.CheckBox
+    Friend WithEvents lblNom As System.Windows.Forms.Label
+    Friend WithEvents btnSupplements As System.Windows.Forms.Button
+    Friend WithEvents btnSuivant As System.Windows.Forms.Button
+    Friend WithEvents btnRetour As System.Windows.Forms.Button
+    Friend WithEvents Label As System.Windows.Forms.Label
+    Friend WithEvents lblIndiceCmde As System.Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents lbNbCmde As System.Windows.Forms.Label
 End Class

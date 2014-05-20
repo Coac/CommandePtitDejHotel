@@ -1,8 +1,7 @@
 ﻿Public Class formNumCh
 
     Private Sub btnMenu_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnMenu.Click
-        Me.Hide()
-        frmMenu.Show()
+        Call formCmde.retourMenuPrincip(sender, e)
 
     End Sub
 
@@ -28,9 +27,17 @@
             MsgBox("La chambre n'existe pas.")
             Exit Sub
         End If
+
+        formPreCmde.lblNumCh.Text = txtboxNumCh.Text
+
+
+        commandes.cmdeCourante.numCh = txtboxNumCh.Text
+
+
         Me.Hide()
-        formCmde.Show()
+        formPreCmde.Show()
 
 
     End Sub
+
 End Class

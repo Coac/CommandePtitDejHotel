@@ -2,26 +2,17 @@
 
     Dim nbViennois As Integer = 0
 
-    Private Sub btnMenu_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnMenu.Click
-        Me.Hide()
+    Public Sub retourMenuPrincip(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnMenu.Click
+        ActiveForm.Hide()
         frmMenu.Show()
     End Sub
 
-    Private Sub txtNom_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles txtNom.KeyPress, txtPrenom.KeyPress
-        If (e.KeyChar >= "A" And e.KeyChar <= "z" Or e.KeyChar = vbBack Or e.KeyChar = " ") Then
-            e.KeyChar = StrConv(e.KeyChar, vbUpperCase)
-            Exit Sub
-        End If
-        e.KeyChar = Chr(0)
+    Private Sub formCmde_Activated(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Activated
+        lblIndiceCmde.Text = commandes.cmdeCourante.nbCmde.ToString
     End Sub
 
-    Private Sub txtNom_LostFocus(ByVal sender As Object, ByVal e As System.EventArgs) Handles txtNom.LostFocus, txtPrenom.LostFocus
-        sender.Text = StrConv(sender.Text, vbUpperCase)
-        sender.Text = Trim(sender.Text)
-    End Sub
 
     Private Sub formCmde_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        cbNbPtitDej.SelectedIndex = 0
 
         Dim Rb As RadioButton
         Dim boissonsChaudes() As String = {"Café Noir", "Café au lait", "Thé", "Chocolat", "Cappucino", "Thé au Citron", "Thé au Lait"}
@@ -55,25 +46,6 @@
         cbBoissonFroide.SelectedIndex = 0
 
 
-
-        Dim supplements() As String = {"Céréale         1.5€",
-                                       "Fromage         2.65€",
-                                       "Oeuf Coque      1.80€",
-                                       "Oeufs au plat   1.95€",
-                                       "Oeufs Brouillés 2.20€",
-                                       "Saumon Fumé     5.50€",
-                                       "Blanc           25€",
-                                       "Rouge           28€",
-                                       "Bière           8€",
-                                       "Champagne       55€"}
-        i = 0
-        For Each Cb In gbSupplements.Controls
-            Cb.Text = supplements(i)
-            i = i + 1
-        Next
-
-
-
     End Sub
 
 
@@ -96,9 +68,53 @@
         End If
     End Sub
 
-    Private Sub rdbSalle_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rdbSalle.CheckedChanged
-        If (rdbSalle.Checked) Then
-            MsgBox("Le service du petit déjeuner es ouvert de 7 heures à 10 heures.")
+
+    Private Sub btnSupplements_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSupplements.Click
+        Me.Hide()
+        formSupplements.Show()
+    End Sub
+
+    Private Sub btnRetour_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnRetour.Click
+        Me.Hide()
+        formPreCmde.Show()
+    End Sub
+
+    Private Sub RadioButton7_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton1.CheckedChanged, RadioButton2.CheckedChanged, RadioButton3.CheckedChanged, RadioButton4.CheckedChanged, RadioButton5.CheckedChanged, RadioButton6.CheckedChanged, RadioButton7.CheckedChanged
+        commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text)).boissonChaude = sender.Text
+    End Sub
+
+    Private Sub btnSuivant_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSuivant.Click
+
+        'Boisson Froide
+        commandes.cmdeCourante.cmdes(lblIndiceCmde.Text).boissonFroide = cbBoissonFroide.SelectedItem
+
+
+        'Viennoiseries
+        Dim Cb As CheckBox
+        Dim i As Integer = 0
+        For Each Cb In gbViennnoiseries.Controls
+            If (Cb.Checked) Then
+                commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text)).viennoiseries(commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text)).nbViennoi) = Cb.Text
+                commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text)).nbViennoi = commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text)).nbViennoi + 1
+            End If
+            i = i + 1
+        Next
+
+
+        'Accommodements
+        If commandes.cmdeCourante.cmdes(lblIndiceCmde.Text).nbViennoi > 0 Then
+            i = 0
+            For Each Cb In gbAccommodements.Controls
+                If (Cb.Checked) Then
+                    commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text)).accodements(commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text)).nbAccodements) = Cb.Text
+                    commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text)).nbAccodements = commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text)).nbAccodements + 1
+                End If
+                i = i + 1
+            Next
         End If
+
+        Me.Hide()
+        formCmdeRecap.Show()
+
     End Sub
 End Class
