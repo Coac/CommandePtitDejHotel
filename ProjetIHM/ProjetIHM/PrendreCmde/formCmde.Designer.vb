@@ -90,12 +90,10 @@ Partial Class formCmde
         'RadioButton7
         '
         Me.RadioButton7.AutoSize = True
-        Me.RadioButton7.Checked = True
         Me.RadioButton7.Location = New System.Drawing.Point(38, 32)
         Me.RadioButton7.Name = "RadioButton7"
         Me.RadioButton7.Size = New System.Drawing.Size(90, 17)
         Me.RadioButton7.TabIndex = 6
-        Me.RadioButton7.TabStop = True
         Me.RadioButton7.Text = "RadioButton7"
         Me.RadioButton7.UseVisualStyleBackColor = True
         '
@@ -391,7 +389,7 @@ Partial Class formCmde
         Me.lblIndiceCmde.Name = "lblIndiceCmde"
         Me.lblIndiceCmde.Size = New System.Drawing.Size(13, 13)
         Me.lblIndiceCmde.TabIndex = 22
-        Me.lblIndiceCmde.Text = "0"
+        Me.lblIndiceCmde.Text = "1"
         '
         'Label1
         '

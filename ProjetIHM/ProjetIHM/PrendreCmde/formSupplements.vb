@@ -2,7 +2,8 @@
     Public prix As Single = 0
 
     Private Sub btnMenu_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnMenu.Click
-        formCmde.retourMenuPrincip(sender, e)
+        Me.Hide()
+        frmMenu.Show()
     End Sub
 
     Private Sub formSupplements_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
@@ -39,19 +40,6 @@
     End Sub
 
     Private Sub btnRetour_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnRetour.Click
-        'Suppléments
-        Dim Cb As CheckBox
-        Dim i As Integer = 0
-        For Each Cb In pnlNoms.Controls
-            If (Cb.Checked) Then
-                commandes.cmdeCourante.cmdes(Val(formCmde.lblIndiceCmde.Text)).supplements.Add(New String(Cb.Text))
-            End If
-            i = i + 1
-        Next
-
-        'Prix
-        commandes.cmdeCourante.cmdes(Val(formCmde.lblIndiceCmde.Text)).prix = prix
-
 
         Me.Hide()
         formCmde.Show()

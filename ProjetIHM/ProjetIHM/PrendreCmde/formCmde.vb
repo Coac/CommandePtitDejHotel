@@ -10,7 +10,6 @@
 
 
     Private Sub formCmde_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
         Dim Rb As RadioButton
         Dim boissonsChaudes() As String = {"Café Noir", "Café au lait", "Thé", "Chocolat", "Cappucino", "Thé au Citron", "Thé au Lait"}
         Dim i As Integer = 0
@@ -41,6 +40,8 @@
         Dim boissonsFroides() As String = {"Abricot", "Ananas", "Citron", "Coca-Cola", "Fruit de la Passion", "Orange", "Pamplemousse", "Tomate"}
         cbBoissonFroide.DataSource = boissonsFroides
         cbBoissonFroide.SelectedIndex = 0
+
+        RadioButton7.Checked = True
 
 
     End Sub
@@ -77,37 +78,81 @@
     End Sub
 
     Private Sub RadioButton7_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RadioButton1.CheckedChanged, RadioButton2.CheckedChanged, RadioButton3.CheckedChanged, RadioButton4.CheckedChanged, RadioButton5.CheckedChanged, RadioButton6.CheckedChanged, RadioButton7.CheckedChanged
-        commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text)).boissonChaude = sender.Text
+
     End Sub
 
     Private Sub btnSuivant_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnSuivant.Click
 
+        'Boisson Chaude
+        Dim rd As RadioButton
+        For Each rd In gbBoissonChaude.Controls
+            If (rd.Checked) Then
+                commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text) - 1).boissonChaude = rd.Text
+            End If
+        Next
+
+
+
         'Boisson Froide
-        commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text)).boissonFroide = cbBoissonFroide.SelectedItem
+        commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text) - 1).boissonFroide = cbBoissonFroide.SelectedItem
 
 
         'Viennoiseries
         Dim Cb As CheckBox
         For Each Cb In gbViennnoiseries.Controls
             If (Cb.Checked) Then
-                commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text)).viennoiseries.Add(New String(Cb.Text))
+                commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text) - 1).viennoiseries.Add(New String(Cb.Text))
             End If
         Next
 
 
         'Accommodements
-        If commandes.cmdeCourante.cmdes(lblIndiceCmde.Text).viennoiseries.Count > 0 Then
+        If commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text) - 1).viennoiseries.Count > 0 Then
             For Each Cb In gbAccommodements.Controls
                 If (Cb.Checked) Then
-                    commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text)).accodements.Add(New String(Cb.Text))
+                    commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text) - 1).accodements.Add(New String(Cb.Text))
                 End If
             Next
         End If
+
+
+
+        'Suppléments
+        Dim i As Integer = 0
+        For Each Cb In formSupplements.pnlNoms.Controls
+            If (Cb.Checked) Then
+                commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text) - 1).supplements.Add(New String(Cb.Text))
+            End If
+            i = i + 1
+        Next
+
+        'Prix
+        commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text) - 1).prix = formSupplements.prix
+
 
         Me.Hide()
         formCmdeRecap.Show()
 
     End Sub
+
+
+    Sub resetCmde()
+        RadioButton7.PerformClick()
+        For Each v In gbViennnoiseries.Controls
+            v.checked = False
+        Next
+        cbBoissonFroide.SelectedIndex = 0
+        For Each a In gbAccommodements.Controls
+            a.checked = False
+        Next
+
+        For Each s In formSupplements.gbSupplements.Controls
+            s.checked = False
+        Next
+        formSupplements.prix = 0
+    End Sub
+
+
 
 
 End Class

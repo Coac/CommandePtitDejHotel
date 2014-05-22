@@ -24,6 +24,7 @@ Partial Class formCmdeRecap
     Private Sub InitializeComponent()
         Me.btnMenu = New System.Windows.Forms.Button()
         Me.btnRetour = New System.Windows.Forms.Button()
+        Me.btnConfirmer = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnMenu
@@ -37,18 +38,28 @@ Partial Class formCmdeRecap
         '
         'btnRetour
         '
-        Me.btnRetour.Location = New System.Drawing.Point(240, 404)
+        Me.btnRetour.Location = New System.Drawing.Point(225, 404)
         Me.btnRetour.Name = "btnRetour"
         Me.btnRetour.Size = New System.Drawing.Size(85, 41)
         Me.btnRetour.TabIndex = 24
         Me.btnRetour.Text = "Retour"
         Me.btnRetour.UseVisualStyleBackColor = True
         '
+        'btnConfirmer
+        '
+        Me.btnConfirmer.Location = New System.Drawing.Point(364, 404)
+        Me.btnConfirmer.Name = "btnConfirmer"
+        Me.btnConfirmer.Size = New System.Drawing.Size(92, 41)
+        Me.btnConfirmer.TabIndex = 25
+        Me.btnConfirmer.Text = "Confirmer la commande"
+        Me.btnConfirmer.UseVisualStyleBackColor = True
+        '
         'formCmdeRecap
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(724, 492)
+        Me.Controls.Add(Me.btnConfirmer)
         Me.Controls.Add(Me.btnRetour)
         Me.Controls.Add(Me.btnMenu)
         Me.Name = "formCmdeRecap"
@@ -58,4 +69,5 @@ Partial Class formCmdeRecap
     End Sub
     Friend WithEvents btnMenu As System.Windows.Forms.Button
     Friend WithEvents btnRetour As System.Windows.Forms.Button
+    Friend WithEvents btnConfirmer As System.Windows.Forms.Button
 End Class

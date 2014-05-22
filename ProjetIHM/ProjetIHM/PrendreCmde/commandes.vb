@@ -10,7 +10,6 @@ Module commandes
 
 
         Sub New()
-            cmdes.Add(New DetailCommande())
         End Sub
 
 
@@ -29,9 +28,19 @@ Module commandes
         End Sub
 
 
+        Public Sub clear()
+            boissonChaude = ""
+            boissonFroide = ""
+            viennoiseries.Clear()
+            accodements.Clear()
+            supplements.Clear()
+            prix = 0
+        End Sub
+
+
     End Class
 
-    Public cmdes() As Commande
+    Public cmdes As List(Of Commande)
     Public cmdeCourante As New Commande()
 
 

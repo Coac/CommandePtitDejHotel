@@ -58,6 +58,13 @@
         commandes.cmdeCourante.nom = txtNom.Text
         commandes.cmdeCourante.prenom = txtPrenom.Text
 
+        formCmde.lbNbCmde.Text = cbNbPtitDej.SelectedItem
+
+        For i = 0 To cbNbPtitDej.SelectedItem - 1
+            commandes.cmdeCourante.cmdes.Add(New DetailCommande)
+        Next
+
+
         Me.Hide()
         formCmde.Show()
     End Sub
