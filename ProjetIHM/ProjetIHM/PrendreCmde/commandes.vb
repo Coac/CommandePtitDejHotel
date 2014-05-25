@@ -7,10 +7,34 @@ Module commandes
         Public prenom As String
         Public lieu As Integer ' SI 0 en Salle, si 390, 6h30
         Public cmdes As List(Of DetailCommande) = New List(Of DetailCommande)
+        Public annul As Boolean = False
 
 
         Sub New()
         End Sub
+
+        Public Sub clear()
+            numCh = 0
+            nom = ""
+            prenom = ""
+            lieu = 0
+            cmdes.Clear()
+        End Sub
+
+        Public Function clone() As Commande
+            Dim cmd As New Commande
+            cmd.numCh = numCh
+            cmd.nom = nom
+            cmd.prenom = prenom
+            cmd.lieu = lieu
+
+            Dim dcmd As New DetailCommande
+            For Each dcmd In cmdes
+                cmd.cmdes.Add(dcmd.clone())
+            Next
+
+            Return cmd
+        End Function
 
 
     End Class
@@ -37,10 +61,28 @@ Module commandes
             prix = 0
         End Sub
 
+        Public Function clone() As DetailCommande
+            Dim dcmd As New DetailCommande
+            dcmd.boissonChaude = boissonChaude
+            dcmd.boissonFroide = boissonFroide
+            dcmd.prix = prix
 
+            For Each viennoi As String In viennoiseries
+                dcmd.viennoiseries.Add(New String(viennoi))
+            Next
+            For Each acco As String In accodements
+                dcmd.accodements.Add(New String(acco))
+            Next
+            For Each supp As String In supplements
+                dcmd.supplements.Add(New String(supp))
+            Next
+
+            Return dcmd
+
+        End Function
     End Class
 
-    Public cmdes As List(Of Commande)
+    Public cmdes As New List(Of Commande)
     Public cmdeCourante As New Commande()
 
 
@@ -50,6 +92,7 @@ Module commandes
         writer.WriteLine(cmde.nom)
         writer.WriteLine(cmde.prenom)
         writer.WriteLine(cmde.lieu)
+        writer.WriteLine(cmde.annul)
         writer.WriteLine(cmde.cmdes.Count)
 
         For Each c In cmde.cmdes
@@ -77,6 +120,16 @@ Module commandes
     End Sub
 
 
+    Public Sub engegistrerCmdeFichier()
+        Dim writer As New System.IO.StreamWriter("Cmdes.txt")
+        Dim cmd As Commande
+        For Each cmd In commandes.cmdes
+            writeCmde(writer, cmd)
+        Next
+        writer.Close()
+    End Sub
+
+
     Sub Main()
         'Dim cmde As New Commande()
         'cmde.numCh = 216
@@ -101,7 +154,7 @@ Module commandes
         'cmde.cmdes(1).supplements = {"supp1", "supp2"}
 
 
-        
+
 
     End Sub
 

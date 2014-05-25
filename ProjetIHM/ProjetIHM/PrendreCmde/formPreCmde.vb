@@ -69,4 +69,16 @@
         formCmde.Show()
     End Sub
 
+
+    Sub clear()
+        txtNom.Text = ""
+        txtPrenom.Text = ""
+        rdbChambre.PerformClick()
+        cbNbPtitDej.SelectedIndex = 0
+
+        hsbHeure.Value = hsbHeure.Minimum
+        lblHeure.Text = (hsbHeure.Value * 5 \ 60) & "h" & (hsbHeure.Value * 5 Mod 60)
+        commandes.cmdeCourante.lieu = hsbHeure.Value * 5
+    End Sub
+
 End Class

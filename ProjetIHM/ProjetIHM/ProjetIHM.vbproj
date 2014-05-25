@@ -101,6 +101,12 @@
     <Compile Include="PrendreCmde\formCmde.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="PrendreCmde\formCmdeExistantRecap.Designer.vb">
+      <DependentUpon>formCmdeExistantRecap.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PrendreCmde\formCmdeExistantRecap.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="PrendreCmde\formCmdeRecap.Designer.vb">
       <DependentUpon>formCmdeRecap.vb</DependentUpon>
     </Compile>
@@ -138,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PrendreCmde\formCmde.resx">
       <DependentUpon>formCmde.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrendreCmde\formCmdeExistantRecap.resx">
+      <DependentUpon>formCmdeExistantRecap.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PrendreCmde\formCmdeRecap.resx">
       <DependentUpon>formCmdeRecap.vb</DependentUpon>

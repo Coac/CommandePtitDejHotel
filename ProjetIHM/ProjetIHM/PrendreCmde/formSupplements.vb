@@ -44,4 +44,11 @@
         Me.Hide()
         formCmde.Show()
     End Sub
+
+    Sub clear()
+        For Each s In pnlNoms.Controls
+            s.checked = False
+        Next
+        prix = 0
+    End Sub
 End Class

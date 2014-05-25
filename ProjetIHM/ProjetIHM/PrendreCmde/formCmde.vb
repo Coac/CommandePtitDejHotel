@@ -130,13 +130,16 @@
         commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text) - 1).prix = formSupplements.prix
 
 
+        formCmdeRecap.lblIndiceCmde.Text = lblIndiceCmde.Text
+        formCmdeRecap.lbNbCmde.Text = lbNbCmde.Text
+
         Me.Hide()
         formCmdeRecap.Show()
 
     End Sub
 
 
-    Sub resetCmde()
+    Sub clear()
         RadioButton7.PerformClick()
         For Each v In gbViennnoiseries.Controls
             v.checked = False
@@ -146,10 +149,8 @@
             a.checked = False
         Next
 
-        For Each s In formSupplements.gbSupplements.Controls
-            s.checked = False
-        Next
-        formSupplements.prix = 0
+        lblIndiceCmde.Text = "1"
+
     End Sub
 
 
