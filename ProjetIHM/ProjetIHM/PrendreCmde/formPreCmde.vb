@@ -25,6 +25,7 @@
 
         cbNbPtitDej.SelectedIndex = 0
 
+        hsbHeure.LargeChange = 12
         hsbHeure.Minimum = 6 * 60 / 5
         hsbHeure.Maximum = 9 * 60 / 5 + 9 'Le plus 9 ici est rajouté, car sans ceci, la valeur max serait de 99 au lieu de 108
     End Sub
