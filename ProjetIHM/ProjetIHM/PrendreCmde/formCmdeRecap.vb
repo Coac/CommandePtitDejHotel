@@ -9,7 +9,7 @@
     Private Sub btnRetour_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnRetour.Click
         
 
-        commandes.cmdeCourante.cmdes(Val(formCmde.lblIndiceCmde.Text) - 1).clear()
+        commandes.clearDetailCommande(commandes.cmdeCourante.cmdes(Val(formCmde.lblIndiceCmde.Text) - 1))
         Me.clear()
 
 
@@ -36,11 +36,17 @@
 
 
                 'Ajout de la commande dans la liste
-                commandes.cmdes.Add(commandes.cmdeCourante.clone())
-                commandes.cmdeCourante.clear()
 
-                'Enregistrement des commandes dans un fichier
-                commandes.engegistrerCmdeFichier()
+                'Pour les erreurs de FixedArray lors de l'enregistrement ds Fichier
+                For p = 0 To 3
+                    ReDim Preserve cmdeCourante.cmdes(p).supplements(9)
+                    ReDim Preserve cmdeCourante.cmdes(p).viennoiseries(2)
+                    ReDim Preserve cmdeCourante.cmdes(p).accodements(3)
+                Next p
+                cmdeCourante.nbCmde = lblNbPtiDej.Text
+                writeCmde(commandes.cmdeCourante)
+
+                clearCommande(commandes.cmdeCourante)
 
                 Me.Hide()
                 frmMenu.Show()
@@ -76,6 +82,10 @@
         lblBoissonChaude.Text = commandes.cmdeCourante.cmdes(Val(formCmde.lblIndiceCmde.Text) - 1).boissonChaude
         lblBoissonFroide.Text = commandes.cmdeCourante.cmdes(Val(formCmde.lblIndiceCmde.Text) - 1).boissonFroide
 
+        For Each supp As String In commandes.cmdeCourante.cmdes(Val(formCmde.lblIndiceCmde.Text) - 1).supplements
+            lbSupp.Items.Add(supp)
+        Next
+
         For Each viennoi As String In commandes.cmdeCourante.cmdes(Val(formCmde.lblIndiceCmde.Text) - 1).viennoiseries
             lbViennoi.Items.Add(viennoi)
         Next
@@ -84,9 +94,7 @@
             lbAccom.Items.Add(accomo)
         Next
 
-        For Each supp As String In commandes.cmdeCourante.cmdes(Val(formCmde.lblIndiceCmde.Text) - 1).supplements
-            lbSupp.Items.Add(supp)
-        Next
+        
 
     End Sub
 

@@ -11,8 +11,10 @@
     End Sub
 
     Private Sub btnAnnul_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAnnul.Click
-        lblNumCh.Tag.annul = True
-        commandes.engegistrerCmdeFichier()
+        Dim cmde As Commande
+        cmde = commandes.getCmde(lblNumCh.Text)
+        cmde.annul = True
+        writeCmde(cmde)
         Me.Hide()
         frmMenu.Show()
     End Sub

@@ -61,9 +61,12 @@
 
         formCmde.lbNbCmde.Text = cbNbPtitDej.SelectedItem
 
-        For i = 0 To cbNbPtitDej.SelectedItem - 1
-            commandes.cmdeCourante.cmdes.Add(New DetailCommande)
+
+        ReDim cmdeCourante.cmdes(3)
+        For i = 0 To 3
+            cmdeCourante.cmdes(i) = New DetailCommande()
         Next
+
 
 
         Me.Hide()

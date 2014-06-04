@@ -25,6 +25,7 @@
         Dim numChambre As String = ""
         numChambre += txtboxNumCh.Text.Chars(1) & txtboxNumCh.Text.Chars(2)
 
+        ' Check Numéro Chambre
         If txtboxNumCh.Text.Chars(0) < "1" Or txtboxNumCh.Text.Chars(0) > "6" Or numChambre < 1 Or numChambre > 16 Then
             MsgBox("La chambre n'existe pas.")
             txtboxNumCh.Focus()
@@ -32,7 +33,14 @@
         End If
 
 
-        For Each cmde As Commande In commandes.cmdes
+        ' Check Commande pour la chambre déjà existant ?
+            Dim cmde As Commande
+            If (commandes.getCmde(txtboxNumCh.Text).nom <> "") Then
+
+                cmde = commandes.getCmde(txtboxNumCh.Text)
+
+            End If
+
             If cmde.numCh = Val(txtboxNumCh.Text) Then
                 If cmde.annul = True Then
                     MsgBox("La commande pour cette chambre a été annulée")
@@ -42,7 +50,7 @@
                 formCmdeExistantRecap.lblNom.Text = cmde.nom
                 formCmdeExistantRecap.lblPrenom.Text = cmde.prenom
                 formCmdeExistantRecap.lblNumCh.Text = cmde.numCh
-                formCmdeExistantRecap.lblNbPtiDej.Text = cmde.cmdes.Count
+                formCmdeExistantRecap.lblNbPtiDej.Text = cmde.nbCmde
 
                 If (commandes.cmdeCourante.lieu = 0) Then
                     formCmdeExistantRecap.lblLieu.Text = "Vous avez prévu de manger en Salle"
@@ -57,18 +65,19 @@
                 formCmdeExistantRecap.Show()
                 Exit Sub
             End If
-        Next
 
 
-        formPreCmde.lblNumCh.Text = txtboxNumCh.Text
 
 
-        'Numero de Chambre
-        commandes.cmdeCourante.numCh = Val(txtboxNumCh.Text)
+            formPreCmde.lblNumCh.Text = txtboxNumCh.Text
 
 
-        Me.Hide()
-        formPreCmde.Show()
+            'Numero de Chambre
+            commandes.cmdeCourante.numCh = Val(txtboxNumCh.Text)
+
+
+            Me.Hide()
+            formPreCmde.Show()
 
 
     End Sub

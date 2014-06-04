@@ -97,33 +97,58 @@
         commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text) - 1).boissonFroide = cbBoissonFroide.SelectedItem
 
 
+        Dim nb As Integer = 0
+        Dim i As Integer = 0
+
         'Viennoiseries
         Dim Cb As CheckBox
         For Each Cb In gbViennnoiseries.Controls
             If (Cb.Checked) Then
-                commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text) - 1).viennoiseries.Add(New String(Cb.Text))
+                nb = nb + 1
+            End If
+        Next
+        ReDim commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text) - 1).viennoiseries(nb - 1)
+        For Each Cb In gbViennnoiseries.Controls
+            If (Cb.Checked) Then
+                commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text) - 1).viennoiseries(i) = New String(Cb.Text)
+                i = i + 1
             End If
         Next
 
 
         'Accommodements
-        If commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text) - 1).viennoiseries.Count > 0 Then
+        nb = 0
+        i = 0
+        If UBound(commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text) - 1).viennoiseries) > -1 Then
             For Each Cb In gbAccommodements.Controls
                 If (Cb.Checked) Then
-                    commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text) - 1).accodements.Add(New String(Cb.Text))
+                    nb = nb + 1
+                End If
+            Next
+            ReDim commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text) - 1).accodements(nb - 1)
+            For Each Cb In gbAccommodements.Controls
+                If (Cb.Checked) Then
+                    commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text) - 1).accodements(i) = New String(Cb.Text)
+                    i = i + 1
                 End If
             Next
         End If
 
 
-
+        i = 0
+        nb = 0
         'Suppléments
-        Dim i As Integer = 0
         For Each Cb In formSupplements.pnlNoms.Controls
             If (Cb.Checked) Then
-                commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text) - 1).supplements.Add(New String(Cb.Text))
+                nb = nb + 1
             End If
-            i = i + 1
+        Next
+        ReDim commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text) - 1).supplements(nb - 1)
+        For Each Cb In formSupplements.pnlNoms.Controls
+            If (Cb.Checked) Then
+                commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text) - 1).supplements(i) = New String(Cb.Text)
+                i = i + 1
+            End If
         Next
 
         'Prix
