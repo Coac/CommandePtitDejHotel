@@ -6,7 +6,12 @@
         frmMenu.Show()
     End Sub
 
+    Private Sub formSupplements_Activated(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Activated
+        Call frmMenu.majHeure(sender, e)
+    End Sub
+
     Private Sub formSupplements_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Me.Tag = Me.Text
         Dim supplements() As String = {"Céréales",
                                     "Fromage",
                                     "Oeuf Coque",

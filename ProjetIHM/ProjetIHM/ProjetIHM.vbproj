@@ -72,6 +72,36 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FinAppli\FormCancel.Designer.vb">
+      <DependentUpon>FormCancel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FinAppli\FormCancel.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FinAppli\FormCommandeFin.Designer.vb">
+      <DependentUpon>FormCommandeFin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FinAppli\FormCommandeFin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FinAppli\FormMenuFin.Designer.vb">
+      <DependentUpon>FormMenuFin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FinAppli\FormMenuFin.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FinAppli\FormNoCommand.Designer.vb">
+      <DependentUpon>FormNoCommand.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FinAppli\FormNoCommand.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormBilan.Designer.vb">
+      <DependentUpon>FormBilan.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormBilan.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmMenu.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +163,21 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FinAppli\FormCancel.resx">
+      <DependentUpon>FormCancel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinAppli\FormCommandeFin.resx">
+      <DependentUpon>FormCommandeFin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinAppli\FormMenuFin.resx">
+      <DependentUpon>FormMenuFin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FinAppli\FormNoCommand.resx">
+      <DependentUpon>FormNoCommand.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormBilan.resx">
+      <DependentUpon>FormBilan.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.vb</DependentUpon>
     </EmbeddedResource>

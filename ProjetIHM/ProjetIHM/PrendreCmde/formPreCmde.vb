@@ -19,7 +19,12 @@
         frmMenu.Show()
     End Sub
 
+    Private Sub formPreCmde_Activated(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Activated
+        Call frmMenu.majHeure(sender, e)
+    End Sub
+
     Private Sub formPreCmde_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Me.Tag = Me.Text
         Dim tab() As Integer = {1, 2, 3, 4}
         cbNbPtitDej.DataSource = tab
 
@@ -67,6 +72,10 @@
             cmdeCourante.cmdes(i) = New DetailCommande()
         Next
 
+        'heure
+        If (rdbChambre.Checked) Then
+            commandes.cmdeCourante.lieu = hsbHeure.Value * 5
+        End If
 
 
         Me.Hide()
@@ -85,4 +94,7 @@
         commandes.cmdeCourante.lieu = hsbHeure.Value * 5
     End Sub
 
+    Private Sub rdbChambre_CheckedChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles rdbChambre.CheckedChanged
+
+    End Sub
 End Class

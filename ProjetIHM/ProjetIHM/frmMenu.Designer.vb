@@ -22,10 +22,12 @@ Partial Class frmMenu
     'Ne la modifiez pas à l'aide de l'éditeur de code.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.btnClient = New System.Windows.Forms.Button()
         Me.btnFin = New System.Windows.Forms.Button()
         Me.btnHote = New System.Windows.Forms.Button()
         Me.lblTitre = New System.Windows.Forms.Label()
+        Me.tmr = New System.Windows.Forms.Timer(Me.components)
         Me.SuspendLayout()
         '
         'btnClient
@@ -64,6 +66,10 @@ Partial Class frmMenu
         Me.lblTitre.TabIndex = 3
         Me.lblTitre.Text = "Menu principal"
         '
+        'tmr
+        '
+        Me.tmr.Interval = 3000
+        '
         'frmMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -83,5 +89,6 @@ Partial Class frmMenu
     Friend WithEvents btnFin As System.Windows.Forms.Button
     Friend WithEvents btnHote As System.Windows.Forms.Button
     Friend WithEvents lblTitre As System.Windows.Forms.Label
+    Friend WithEvents tmr As System.Windows.Forms.Timer
 
 End Class

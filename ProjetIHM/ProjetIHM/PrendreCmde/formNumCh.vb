@@ -86,4 +86,17 @@
         txtboxNumCh.Text = ""
     End Sub
 
+    Private Sub formNumCh_Activated(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Activated
+        Call frmMenu.majHeure(sender, e)
+    End Sub
+
+    Private Sub formNumCh_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Me.Tag = Me.Text
+    End Sub
+
+    Private Sub txtboxNumCh_TextChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles txtboxNumCh.TextChanged
+
+    End Sub
+
+
 End Class

@@ -70,10 +70,10 @@ Partial Class formPreCmde
         Me.rdbChambre.Checked = True
         Me.rdbChambre.Location = New System.Drawing.Point(28, 37)
         Me.rdbChambre.Name = "rdbChambre"
-        Me.rdbChambre.Size = New System.Drawing.Size(105, 17)
+        Me.rdbChambre.Size = New System.Drawing.Size(143, 17)
         Me.rdbChambre.TabIndex = 1
         Me.rdbChambre.TabStop = True
-        Me.rdbChambre.Text = "Dans la chambre"
+        Me.rdbChambre.Text = "Dans la chambre (15€/p)"
         Me.rdbChambre.UseVisualStyleBackColor = True
         '
         'rdbSalle
@@ -81,10 +81,10 @@ Partial Class formPreCmde
         Me.rdbSalle.AutoSize = True
         Me.rdbSalle.Location = New System.Drawing.Point(28, 59)
         Me.rdbSalle.Name = "rdbSalle"
-        Me.rdbSalle.Size = New System.Drawing.Size(64, 17)
+        Me.rdbSalle.Size = New System.Drawing.Size(96, 17)
         Me.rdbSalle.TabIndex = 0
         Me.rdbSalle.TabStop = True
-        Me.rdbSalle.Text = "En Salle"
+        Me.rdbSalle.Text = "En Salle (9€/p)"
         Me.rdbSalle.UseVisualStyleBackColor = True
         '
         'lblNbDej
@@ -226,7 +226,7 @@ Partial Class formPreCmde
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(896, 437)
+        Me.ClientSize = New System.Drawing.Size(681, 413)
         Me.Controls.Add(Me.lblNumCh)
         Me.Controls.Add(Me.lblTitre)
         Me.Controls.Add(Me.gbHeure)

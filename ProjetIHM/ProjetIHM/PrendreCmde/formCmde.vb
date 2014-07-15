@@ -8,8 +8,14 @@
 
     End Sub
 
+    Private Sub formCmde_Activated(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Activated
+        Call frmMenu.majHeure(sender, e)
+    End Sub
+
 
     Private Sub formCmde_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+        Me.Tag = Me.Text
+
         Dim Rb As RadioButton
         Dim boissonsChaudes() As String = {"Café Noir", "Café au lait", "Thé", "Chocolat", "Cappucino", "Thé au Citron", "Thé au Lait"}
         Dim i As Integer = 0
@@ -152,7 +158,12 @@
         Next
 
         'Prix
-        commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text) - 1).prix = formSupplements.prix
+        If (formPreCmde.rdbChambre.Checked) Then
+            commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text) - 1).prix = formSupplements.prix + 15.0
+        Else
+            commandes.cmdeCourante.cmdes(Val(lblIndiceCmde.Text) - 1).prix = formSupplements.prix + 9.0
+        End If
+
 
 
         formCmdeRecap.lblIndiceCmde.Text = lblIndiceCmde.Text

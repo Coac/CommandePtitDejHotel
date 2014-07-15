@@ -36,6 +36,7 @@ Partial Class formCmdeRecap
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.lblBoissonFroide = New System.Windows.Forms.Label()
         Me.lblBoissonChaude = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
@@ -49,6 +50,7 @@ Partial Class formCmdeRecap
         Me.lbNbCmde = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.lblIndiceCmde = New System.Windows.Forms.Label()
+        Me.lblPrix = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -181,6 +183,8 @@ Partial Class formCmdeRecap
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.lblPrix)
+        Me.GroupBox2.Controls.Add(Me.Label11)
         Me.GroupBox2.Controls.Add(Me.lblBoissonFroide)
         Me.GroupBox2.Controls.Add(Me.lblBoissonChaude)
         Me.GroupBox2.Controls.Add(Me.Label10)
@@ -197,6 +201,15 @@ Partial Class formCmdeRecap
         Me.GroupBox2.TabIndex = 29
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Récapitulatif du Petit Déjeuner"
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(11, 206)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(140, 13)
+        Me.Label11.TabIndex = 10
+        Me.Label11.Text = "Prix total du petit Déjeuner : "
         '
         'lblBoissonFroide
         '
@@ -312,6 +325,15 @@ Partial Class formCmdeRecap
         Me.lblIndiceCmde.TabIndex = 30
         Me.lblIndiceCmde.Text = "1"
         '
+        'lblPrix
+        '
+        Me.lblPrix.AutoSize = True
+        Me.lblPrix.Location = New System.Drawing.Point(153, 206)
+        Me.lblPrix.Name = "lblPrix"
+        Me.lblPrix.Size = New System.Drawing.Size(34, 13)
+        Me.lblPrix.TabIndex = 11
+        Me.lblPrix.Text = "lblPrix"
+        '
         'formCmdeRecap
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -362,4 +384,6 @@ Partial Class formCmdeRecap
     Friend WithEvents Label9 As System.Windows.Forms.Label
     Friend WithEvents lblBoissonFroide As System.Windows.Forms.Label
     Friend WithEvents lblBoissonChaude As System.Windows.Forms.Label
+    Friend WithEvents Label11 As System.Windows.Forms.Label
+    Friend WithEvents lblPrix As System.Windows.Forms.Label
 End Class

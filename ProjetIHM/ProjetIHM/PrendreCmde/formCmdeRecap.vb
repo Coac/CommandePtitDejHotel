@@ -48,6 +48,7 @@
 
                 clearCommande(commandes.cmdeCourante)
 
+
                 Me.Hide()
                 frmMenu.Show()
                 Me.clear()
@@ -62,6 +63,9 @@
     End Sub
 
     Private Sub formCmdeRecap_Activated(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Activated
+
+        Call frmMenu.majHeure(sender, e)
+
         'Clear
         Me.clear()
 
@@ -82,6 +86,8 @@
         lblBoissonChaude.Text = commandes.cmdeCourante.cmdes(Val(formCmde.lblIndiceCmde.Text) - 1).boissonChaude
         lblBoissonFroide.Text = commandes.cmdeCourante.cmdes(Val(formCmde.lblIndiceCmde.Text) - 1).boissonFroide
 
+        lblPrix.Text = commandes.cmdeCourante.cmdes(Val(formCmde.lblIndiceCmde.Text) - 1).prix
+
         For Each supp As String In commandes.cmdeCourante.cmdes(Val(formCmde.lblIndiceCmde.Text) - 1).supplements
             lbSupp.Items.Add(supp)
         Next
@@ -94,7 +100,8 @@
             lbAccom.Items.Add(accomo)
         Next
 
-        
+
+
 
     End Sub
 
@@ -105,6 +112,6 @@
     End Sub
 
     Private Sub formCmdeRecap_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
+        Me.Tag = Me.Text
     End Sub
 End Class
